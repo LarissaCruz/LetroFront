@@ -1,13 +1,10 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
-const Avatar = () => {
+const Avatar = (source) => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../assets/profile.png")}
-        style={styles.image}
-      />
+      <Image source={source} style={styles.image} />
     </View>
   );
 };

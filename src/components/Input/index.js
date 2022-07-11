@@ -1,10 +1,12 @@
 import React from "react";
-import { TextInput, StyleSheet, Animated, Text } from "react-native";
+import { styles } from "./styles";
+import { TextInput, StyleSheet, Animated, Text, View } from "react-native";
 import { Controller } from "react-hook-form";
 
-const TextInput = ({ name, secureTextEntry, control, rules }) => {
+const Input = ({ name, label, children, secureTextEntry, control, rules }) => {
   return (
-    <>
+    <View style={[styles.container, {}]}>
+      {children}
       <Controller
         control={control}
         rules={rules}
@@ -14,8 +16,9 @@ const TextInput = ({ name, secureTextEntry, control, rules }) => {
         }) => (
           <>
             <TextInput
-              style={[styles.input(error), {}]}
               onBlur={onBlur}
+              style={[styles.input(error), {}]}
+              placeholder={label}
               onChangeText={onChange}
               value={value}
               secureTextEntry={secureTextEntry}
@@ -29,26 +32,8 @@ const TextInput = ({ name, secureTextEntry, control, rules }) => {
         )}
         name={name}
       />
-    </>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    width: 125,
-    height: 125,
-    borderRadius: 125,
-    overflow: "hidden",
-    resizeMode: "contain",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: 125,
-    height: 125,
-    borderRadius: 100,
-    overflow: "hidden",
-  },
-});
-
-export default TextInput;
+export default Input;

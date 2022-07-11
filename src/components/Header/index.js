@@ -1,4 +1,5 @@
 import React from "react";
+import { styles } from "./styles";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { MagnifyingGlass, Cart, Menu } from "../../util/icon";
 
@@ -18,7 +19,7 @@ const Header = ({ navigation }) => {
         </View>
         <TouchableOpacity
           style={styles.iconRight}
-          onPress={() => navigation.navigate("CART")}
+          onPress={() => navigation.navigate("ShoppingCart")}
         >
           <Cart />
         </TouchableOpacity>
@@ -26,31 +27,5 @@ const Header = ({ navigation }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    height: 54,
-    flexDirection: "row",
-    backgroundColor: "#252837",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 10,
-  },
-  text: {
-    color: "#fff",
-    fontSize: 16,
-    lineHeight: 25,
-    letterSpacing: 5,
-  },
-  cotainerIcon: {
-    flexDirection: "row",
-  },
-  iconRight: {
-    marginRight: 10,
-  },
-  iconLeft: {
-    marginLeft: 10,
-  },
-});
 
 export default Header;

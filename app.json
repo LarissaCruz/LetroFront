@@ -23,8 +23,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#EB1C24"
+      },
+      "package": "com.larissacruz.AppCatalogoLetro"
     },
     "web": {
       "favicon": "./assets/favicon.png"

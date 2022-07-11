@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../context/UserContext";
 import { BASE_URL } from "../config";
 
 export function useProduct(initialValue = []) {

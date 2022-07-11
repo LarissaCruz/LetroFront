@@ -62,13 +62,17 @@ export function useAuth() {
     }),
     []
   );
-  React.useEffect(async () => {
-    let result = await SecureStore.getItemAsync("user").then((user) => {
-      if (user) {
-        dispatch(createAction("SET_USER", JSON.parse(user)));
-      }
-      dispatch(createAction("SET_LOADING", false));
-    });
+
+  React.useEffect(() => {
+    async function fetchData() {
+      let result = await SecureStore.getItemAsync("user").then((user) => {
+        if (user) {
+          dispatch(createAction("SET_USER", JSON.parse(user)));
+        }
+        dispatch(createAction("SET_LOADING", false));
+      });
+    }
+    fetchData();
   }, []);
   return { auth, state };
 }

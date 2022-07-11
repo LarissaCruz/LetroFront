@@ -1,17 +1,41 @@
-import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, View, FlatList } from "react-native";
+import React from "react";
+import Header from "../../components/Header";
+import { View, FlatList, ActivityIndicator, Dimensions } from "react-native";
+import { dataProduct } from "../../data";
+import ListCardProducts from "../../components/ListCardProducts";
 import Carousel from "../../components/Carousel";
+import { useProduct } from "../../hooks/useProduct";
+import { styles } from "./styles";
+const screenHeight = Dimensions.get("screen").height;
 
-const Home = () => {
-  return <Carousel />;
+const Home = ({ navigation }) => {
+  const products = useProduct();
+  const ListHeaderComponent = () => {
+    return (
+      <>
+        <Header navigation={navigation} />
+        <Carousel />
+      </>
+    );
+  };
+
+  return (
+    <FlatList
+      ListHeaderComponent={ListHeaderComponent}
+      renderItem={({ item }) => null}
+      ListFooterComponent={
+        <View style={{ backgroundColor: "#252837" }}>
+          <View style={styles.cotainerSection(screenHeight)}>
+            <ListCardProducts
+              item={products}
+              data={dataProduct}
+              navigation={navigation}
+            />
+          </View>
+        </View>
+      }
+    />
+  );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#e8e7e3",
-  },
-  contentWrapper: {
-    padding: 20,
-  },
-});
+
 export default Home;

@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabBar from "./TabBar";
 import Product from "../pages/Product";
-import Cart from "../pages/ShoppingCart";
+import ShoppingCart from "../pages/ShoppingCart";
 import { Text } from "react-native";
 
 const Stack = createNativeStackNavigator();
@@ -22,8 +22,8 @@ function MainStackNavigator() {
           component={Product}
         />
         <Stack.Screen
-          name="CART"
-          component={Cart}
+          name="ShoppingCart"
+          component={ShoppingCart}
           options={{
             headerShadowVisible: false,
             headerTitleAlign: "center",
