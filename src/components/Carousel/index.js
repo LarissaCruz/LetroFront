@@ -3,7 +3,7 @@ import Paginator from "../Paginator";
 import Banner from "../Banner";
 import { data } from "../../data";
 import { styles } from "./styles";
-import { FlatList, View, Animated, StyleSheet } from "react-native";
+import { FlatList, View, Animated } from "react-native";
 
 export default function Carousel({ navigation }) {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -14,6 +14,7 @@ export default function Carousel({ navigation }) {
       useNativeDriver: false,
     }
   );
+  
   return (
     <>
       <FlatList

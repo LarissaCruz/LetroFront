@@ -27,7 +27,7 @@ export default function TabBar() {
       />
       <Tab.Screen
         name="Notification"
-        component={Home}
+        component={Favorite}
         options={{
           headerShown: false,
           showLabel: false,

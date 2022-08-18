@@ -36,7 +36,7 @@ const Register = ({ navigation }) => {
       );
     } catch (e) {
       setLoading(false);
-      console.log("Erro", e);
+      ShowAlert("Erro", "Não foi possivel realizar seu cadastrado tente novamente mais tarde");
     }
   };
 

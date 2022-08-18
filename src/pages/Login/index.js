@@ -24,7 +24,7 @@ const Login = ({ navigation }) => {
       await login(email, senha);
     } catch (e) {
       setLoading(false);
-      ShowAlert("Erro", e.message);
+      ShowAlert("Erro", "Email ou senha invalidos");
     }
   };
 

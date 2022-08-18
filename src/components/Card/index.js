@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Favorite } from "../../util/icon";
 import { BASE_URL_IMG } from "../../config";
 import { styles } from "./styles";
@@ -10,6 +10,7 @@ const Card = ({ item, navigation }) => {
   const price = `$${item.attributes.price}`;
   const descont = item.attributes.descont;
   const image = `${BASE_URL_IMG}${item.attributes.image.data[0].attributes.url}`;
+  
   return (
     <TouchableOpacity
       key={item.toString()}

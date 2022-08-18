@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import { View, FlatList, ActivityIndicator, Dimensions } from "react-native";
+import { View, FlatList, Dimensions } from "react-native";
 import { dataProduct } from "../../data";
 import ListCardProducts from "../../components/ListCardProducts";
 import Carousel from "../../components/Carousel";

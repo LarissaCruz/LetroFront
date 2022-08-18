@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 5,
     width: "80%",
+    
   }),
   text: {
     color: "#F67162",

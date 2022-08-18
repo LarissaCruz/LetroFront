@@ -13,8 +13,7 @@ import Header from "../../components/Header";
 import { Heart } from "../../util/icon";
 import { styles } from "./styles";
 import { BASE_URL_IMG } from "../../config";
-import { UserContext } from "../../context/UserContext";
-import { CartContext } from "../../context/CartContext";
+
 import Loading from "../../components/Loading";
 import Paginator from "../../components/Paginator";
 const screenWidth = Dimensions.get("screen").width;
@@ -24,17 +23,9 @@ const Product = ({ route, navigation }) => {
   const data = route.params.data;
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
-  const { token, id } = React.useContext(UserContext);
   const [loading, setLoading] = useState(false);
-  const { add_Item } = React.useContext(CartContext);
 
-  const onSaveCart = async (data) => {
-    try {
-      await add_Item(data, token, id);
-    } catch (e) {
-      console.log("Erro", e);
-    }
-  };
+  
   return (
     <>
       <Header navigation={navigation} />
@@ -95,7 +86,7 @@ const Product = ({ route, navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonText}
-          onPress={() => onSaveCart(data)}
+          
         >
           <Text style={styles.textbuttom}>Add to Basket</Text>
         </TouchableOpacity>

@@ -6,13 +6,11 @@ import AuthStackNavigator from "./src/routes/AuthStackNavigator";
 import { useAuth } from "./src/hooks/useAuth";
 import { UserContext } from "./src/context/UserContext";
 import { AuthContext } from "./src/context/AuthContext";
-import { CartContext } from "./src/context/CartContext";
-import { useCart } from "./src/hooks/useCart";
 
 export default function App() {
   const [statusFont, setStatusFont] = useState(false);
   const { auth, state } = useAuth();
-  const { authCart } = useCart();
+  
   let [fontsLoaded] = useFonts({
     "Avenir-Bold": require("./assets/fonts/AvenirLTStd-Black.otf"),
     "Avenir-Regular": require("./assets/fonts/AvenirLTStd-Book.otf"),
@@ -44,9 +42,7 @@ export default function App() {
         <>
           <StatusBar backgroundColor={"#252837"}></StatusBar>
           <AuthContext.Provider value={auth}>
-            <CartContext.Provider value={authCart}>
-              {renderScreens()}
-            </CartContext.Provider>
+            {renderScreens()}
           </AuthContext.Provider>
         </>
       )}

@@ -1,6 +1,6 @@
 import React from "react";
 import { styles } from "./styles";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { MagnifyingGlass, Cart, Menu } from "../../util/icon";
 
 const Header = ({ navigation }) => {

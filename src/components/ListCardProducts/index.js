@@ -6,13 +6,11 @@ import {
   View,
   FlatList,
   ActivityIndicator,
-  Dimensions,
 } from "react-native";
 import HeaderSectionList from "../HeaderSectionList";
-const screenHeight = Dimensions.get("screen").height;
 
 const ListCardProducts = ({ item, navigation }) => {
-  console.log("item@", item.length);
+
   return (
     <>
       {item.length === 0 ? (
